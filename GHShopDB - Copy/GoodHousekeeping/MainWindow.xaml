@@ -1,0 +1,24 @@
+﻿<controls:MetroWindow x:Class="GoodHousekeeping.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
+        xmlns:goodHousekeeping="clr-namespace:GoodHousekeeping"
+        Title="Good Housekeeping Shop Database" Height="600" Width="1100" Closing="MetroWindow_Closing_1">
+    <Grid>
+        <dragablz:TabablzControl>
+            <TabItem Header="Customer Database">
+                <goodHousekeeping:CustomerDatabase/>
+            </TabItem>
+            <TabItem Header="Inventory Database">
+                <goodHousekeeping:InventoryDatabase/>
+            </TabItem>
+        </dragablz:TabablzControl>
+        <controls:Flyout x:Name="NewCustomerFlyout" Header="New Customer" Position="Right" IsModal="True" Theme="Light">
+            <goodHousekeeping:NewCustomer/>
+        </controls:Flyout>
+        <controls:Flyout x:Name="NewInventoryFlyout" Header="New Inventory" Position="Right" IsModal="True" Theme="Light">
+            <goodHousekeeping:NewInventory/>
+        </controls:Flyout>
+    </Grid>
+</controls:MetroWindow>
